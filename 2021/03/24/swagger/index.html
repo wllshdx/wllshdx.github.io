@@ -1,0 +1,351 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>swagger | wllblog</title><meta name="keywords" content="swagger"><meta name="author" content="wll"><meta name="copyright" content="wll"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Swaggerswagger是有两个版本的，而且区别还挺大的，一个是**swagger-ui**也就是**swagger1**;还有一个是**springfox-swagger**也就是**swagger2**  使用添加 Swagger 依赖&lt;dependency&gt;    &lt;groupId&gt;io.springfox&lt;&#x2F;groupId&gt;    &lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="swagger">
+<meta property="og:url" content="https://wllshdx.github.io/2021/03/24/swagger/index.html">
+<meta property="og:site_name" content="wllblog">
+<meta property="og:description" content="Swaggerswagger是有两个版本的，而且区别还挺大的，一个是**swagger-ui**也就是**swagger1**;还有一个是**springfox-swagger**也就是**swagger2**  使用添加 Swagger 依赖&lt;dependency&gt;    &lt;groupId&gt;io.springfox&lt;&#x2F;groupId&gt;    &lt;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg2.png">
+<meta property="article:published_time" content="2021-03-24T09:56:50.000Z">
+<meta property="article:modified_time" content="2021-03-25T03:28:11.776Z">
+<meta property="article:author" content="wll">
+<meta property="article:tag" content="swagger">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg2.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wllshdx.github.io/2021/03/24/swagger/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: wll","link":"链接: ","source":"来源: wllblog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-03-25 11:28:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="wllblog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://wll-image.oss-cn-beijing.aliyuncs.com/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg2.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">wllblog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">swagger</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-24T09:56:50.000Z" title="发表于 2021-03-24 17:56:50">2021-03-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-25T03:28:11.776Z" title="更新于 2021-03-25 11:28:11">2021-03-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="swagger"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Swagger"><a href="#Swagger" class="headerlink" title="Swagger"></a>Swagger</h1><pre><code>swagger是有两个版本的，而且区别还挺大的，一个是**swagger-ui**也就是**swagger1**;还有一个是**springfox-swagger**也就是**swagger2**
+</code></pre>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="添加-Swagger-依赖"><a href="#添加-Swagger-依赖" class="headerlink" title="添加 Swagger 依赖"></a>添加 Swagger 依赖</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;io.springfox&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;springfox-swagger2&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.9.2&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;!-- 集成 Swagger UI --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;io.springfox&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;springfox-swagger-ui&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.9.2&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Java-配置"><a href="#Java-配置" class="headerlink" title="Java 配置"></a>Java 配置</h3><p>Springfox 提供了一个 Docket 对象，让我们可以灵活的配置 Swagger 的各项属性。下面我们新建一个 cn.itweknow.sbswagger.conf.SwaggerConfig.java 类，并增加如下内容:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger2</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">api</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">                .select()</span><br><span class="line">                .apis(RequestHandlerSelectors.any())</span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意: <code>@Configuration</code> 是告诉 Spring Boot 需要加载这个配置类，<code>@EnableSwagger2</code> 是启用 Swagger2，如果没加的话自然而然也就看不到后面的验证效果了。</p>
+<h3 id="SwaggerUI访问"><a href="#SwaggerUI访问" class="headerlink" title="SwaggerUI访问"></a>SwaggerUI访问</h3><p>其实就只需要添加一下依赖就可以了，我们重新启动一下项目，然后在浏览器中访问 <a target="_blank" rel="noopener" href="http://localhost:8080/swagger-ui.html">http://localhost:8080/swagger-ui.html</a> 就可以看到如下的效果了</p>
+<h3 id="文档描述"><a href="#文档描述" class="headerlink" title="文档描述"></a>文档描述</h3><ol>
+<li><p>通过在控制器类上增加<code>@Api</code> 注解，可以给控制器增加描述和标签信息。</p>
+</li>
+<li><p>通过在接口方法上增加 <code>@ApiOperation</code> 注解来展开对接口的描述，当然这个注解还可以指定很多内容，我们在下面的相关注解说明章节中详细解释。</p>
+</li>
+<li><p>实体描述，我们可以通过<code> @ApiModel</code> 和 <code>@ApiModelProperty</code> 注解来对我们 API 中所涉及到的对象做描述。</p>
+</li>
+<li><p>文档信息配置，Swagger 还支持设置一些文档的版本号、联系人邮箱、网站、版权、开源协议等等信息，但与上面几条不同的是这些信息不是通过注解配置，而是通过创建一个 ApiInfo 对象，并且使用 <code>Docket.appInfo()</code> 方法来设置，我们在 SwaggerConfig.java 类中新增如下内容即可。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Docket <span class="title">api</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">		    .select()</span><br><span class="line">            .apis(RequestHandlerSelectors.any())</span><br><span class="line">            .paths(PathSelectors.any())</span><br><span class="line">            .build()</span><br><span class="line">            .apiInfo(apiInfo());</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> ApiInfo(</span><br><span class="line">            <span class="string">&quot;Spring Boot 项目集成 Swagger 实例文档&quot;</span>,</span><br><span class="line">            <span class="string">&quot;我的博客网站：https://itweknow.cn，欢迎大家访问。&quot;</span>,</span><br><span class="line">            <span class="string">&quot;API V1.0&quot;</span>,</span><br><span class="line">            <span class="string">&quot;Terms of service&quot;</span>,</span><br><span class="line">            <span class="keyword">new</span> Contact(<span class="string">&quot;名字想好没&quot;</span>, <span class="string">&quot;https://itweknow.cn&quot;</span>, <span class="string">&quot;gancy.programmer@gmail.com&quot;</span>),</span><br><span class="line">                <span class="string">&quot;Apache&quot;</span>, <span class="string">&quot;http://www.apache.org/&quot;</span>, Collections.emptyList());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="接口过滤"><a href="#接口过滤" class="headerlink" title="接口过滤"></a>接口过滤</h3><p>有些时候我们并不是希望所有的 Rest API 都呈现在文档上，这种情况下 Swagger2 提供给我们了两种方式配置，一种是基于 <code>@ApiIgnore</code> 注解，另一种是在 Docket 上增加筛选。</p>
+<ol>
+<li><p><code>@ApiIgnore</code> 注解。</p>
+<p>如果想在文档中屏蔽掉删除用户的接口（user/delete），那么只需要在删除用户的方法上加上 @ApiIgnore 即可。</p>
+</li>
+<li><p>在 Docket 上增加筛选。Docket 类提供了 <code>apis()</code> 和 <code>paths()</code>两 个方法来帮助我们在不同级别上过滤接口：</p>
+<ul>
+<li><p><code>apis()</code>：这种方式我们可以通过指定包名的方式，让 Swagger 只去某些包下面扫描。</p>
+</li>
+<li><p><code>paths()</code>：这种方式可以通过筛选 API 的 url 来进行过滤。</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">.apis(RequestHandlerSelectors.basePackage(<span class="string">&quot;cn.itweknow.sbswagger.controller&quot;</span>))</span><br><span class="line">.paths(Predicates.or(PathSelectors.ant(<span class="string">&quot;/user/add&quot;</span>),</span><br><span class="line">        PathSelectors.ant(<span class="string">&quot;/user/find/*&quot;</span>)))</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="自定义响应消息"><a href="#自定义响应消息" class="headerlink" title="自定义响应消息"></a>自定义响应消息</h3><ol>
+<li><p>Swagger 允许我们通过 Docket 的 <code>globalResponseMessage()</code> 方法全局覆盖 HTTP 方法的响应消息，但是首先我们得通过 Docket 的 <code>useDefaultResponseMessages</code> 方法告诉 Swagger 不使用默认的 HTTP 响应消息，假设我们现在需要覆盖所有 GET 方法的 500 和 403 错误的响应消息，我们只需要在 SwaggerConfig.java 类中的 Docket Bean 下添加如下内容：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">.useDefaultResponseMessages(<span class="keyword">false</span>)</span><br><span class="line">.globalResponseMessage(RequestMethod.GET, newArrayList(</span><br><span class="line"><span class="keyword">new</span> ResponseMessageBuilder()</span><br><span class="line">              .code(<span class="number">500</span>)</span><br><span class="line">              .message(<span class="string">&quot;服务器发生异常&quot;</span>)</span><br><span class="line">              .responseModel(<span class="keyword">new</span> ModelRef(<span class="string">&quot;Error&quot;</span>))</span><br><span class="line">              .build(),</span><br><span class="line">       <span class="keyword">new</span> ResponseMessageBuilder()</span><br><span class="line">              .code(<span class="number">403</span>)</span><br><span class="line">              .message(<span class="string">&quot;资源不可用&quot;</span>)</span><br><span class="line">              .build()</span><br><span class="line">));</span><br></pre></td></tr></table></figure>
+
+<p>添加如上面的代码后，如下图所示，您会发现在 SwaggerUI 页面展示的所有 GET 类型请求的 403 以及 500 错误的响应消息都变成了我们自定义的内容。</p>
+<p><img src="https://wll-image.oss-cn-beijing.aliyuncs.com/image-20210324175730657.png" alt="image-20210324175730657"></p>
+</li>
+</ol>
+<h2 id="相关注解"><a href="#相关注解" class="headerlink" title="相关注解"></a>相关注解</h2><h3 id="Controller-相关注解"><a href="#Controller-相关注解" class="headerlink" title="Controller 相关注解"></a>Controller 相关注解</h3><p><code>@Api</code>: 可设置对控制器的描述。</p>
+<p><img src="https://wll-image.oss-cn-beijing.aliyuncs.com/image-20210324191541219.png" alt="image-20210324191541219"></p>
+<h3 id="接口相关注解"><a href="#接口相关注解" class="headerlink" title="接口相关注解"></a>接口相关注解</h3><ol>
+<li><p><code>@ApiOperation</code>: 可设置对接口的描述。</p>
+</li>
+<li><p><img src="https://wll-image.oss-cn-beijing.aliyuncs.com/image-20210324191519288.png" alt="image-20210324191519288"></p>
+</li>
+<li><p><code>@ApiIgnore</code>: Swagger 文档不会显示拥有该注解的接口。</p>
+</li>
+<li><p><code>@ApiImplicitParams</code>: 用于描述接口的非对象参数集。</p>
+</li>
+<li><p><code>@ApiImplicitParam</code>: 用于描述接口的非对象参数，一般与 <code>@ApiImplicitParams</code> 组合使用。</p>
+<p><img src="https://wll-image.oss-cn-beijing.aliyuncs.com/image-20210324191457067.png" alt="image-20210324191457067"></p>
+</li>
+</ol>
+<h3 id="Model-相关注解"><a href="#Model-相关注解" class="headerlink" title="Model 相关注解"></a>Model 相关注解</h3><ol>
+<li><code>@ApiModel</code>: 可设置接口相关实体的描述。</li>
+<li><code>@ApiModelProperty</code>: 可设置实体属性的相关描述。</li>
+<li><img src="../../../../../../Desktop/%E7%AC%94%E8%AE%B0/images/image-20200510163134396.png" alt="image-20200510163134396"></li>
+</ol>
+<h2 id="Swagger-UI-的使用"><a href="#Swagger-UI-的使用" class="headerlink" title="Swagger UI 的使用"></a>Swagger UI 的使用</h2><h3 id="接口查看"><a href="#接口查看" class="headerlink" title="接口查看"></a>接口查看</h3><p>SwaggerUI 会以列表的方式展示所有扫描到的接口，初始状态是收缩的，我们只需要点击展开就好，而且会在左边标识接口的请求方式（GET、POST、PUT、DELETE 等等）。</p>
+<h3 id="接口调用"><a href="#接口调用" class="headerlink" title="接口调用"></a>接口调用</h3><p>如下图所示，点击接口展开后页面右上角的 <strong>Try it out</strong> 按钮后，页面会变成如图所示：</p>
+<p><img src="https://wll-image.oss-cn-beijing.aliyuncs.com/image-20210324175753177.png" alt="image-20210324175753177"></p>
+<p>SwaggerUI 会给我们自动填充请求参数的数据结构，我们需要做的只是点击 <strong>Execute</strong> 即可发起调用</p>
+<p><img src="https://wll-image.oss-cn-beijing.aliyuncs.com/image-20210324175807940.png" alt="image-20210324175807940"></p>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>如下图所示，SwaggerUI 会通过我们在实体上使用的 <code>@ApiModel</code> 注解以及<code>@ApiModelProperty</code> 注解来自动补充实体以及其属性的描述和备注。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Swagger 是一套基于 OpenAPI 规范构建的开源工具，可以帮助我们设计、构建、记录以及使用 Rest API。Swagger 主要包含了以下三个部分：</p>
+<ul>
+<li> Swagger Editor：基于浏览器的编辑器，我们可以使用它编写我们 OpenAPI 规范。</li>
+<li> Swagger UI：它会将我们编写的 OpenAPI 规范呈现为交互式的 API 文档，后文我将使用浏览器来查看并且操作我们的 Rest API。</li>
+<li> Swagger Codegen：它可以通过为 OpenAPI（以前称为 Swagger）规范定义的任何 API 生成服务器存根和客户端 SDK 来简化构建过程。</li>
+</ul>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><ol>
+<li>代码变，文档变。只需要少量的注解，Swagger 就可以根据代码自动生成 API 文档，很好的保证了文档的时效性。</li>
+<li>跨语言性，支持 40 多种语言。</li>
+<li>Swagger UI 呈现出来的是一份可交互式的 API 文档，我们可以直接在文档页面尝试 API 的调用，省去了准备复杂的调用参数的过程。</li>
+<li>还可以将文档规范导入相关的工具（例如 SoapUI）, 这些工具将会为我们自动地创建自动化测试。</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">wll</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wllshdx.github.io/2021/03/24/swagger/">https://wllshdx.github.io/2021/03/24/swagger/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wllshdx.github.io" target="_blank">wllblog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/swagger/">swagger</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg2.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Swagger"><span class="toc-number">1.</span> <span class="toc-text">Swagger</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0-Swagger-%E4%BE%9D%E8%B5%96"><span class="toc-number">1.1.1.</span> <span class="toc-text">添加 Swagger 依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.2.</span> <span class="toc-text">Java 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SwaggerUI%E8%AE%BF%E9%97%AE"><span class="toc-number">1.1.3.</span> <span class="toc-text">SwaggerUI访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.1.4.</span> <span class="toc-text">文档描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E8%BF%87%E6%BB%A4"><span class="toc-number">1.1.5.</span> <span class="toc-text">接口过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%93%8D%E5%BA%94%E6%B6%88%E6%81%AF"><span class="toc-number">1.1.6.</span> <span class="toc-text">自定义响应消息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text">相关注解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Controller-%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.2.1.</span> <span class="toc-text">Controller 相关注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.2.2.</span> <span class="toc-text">接口相关注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Model-%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.2.3.</span> <span class="toc-text">Model 相关注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swagger-UI-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">Swagger UI 的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%9F%A5%E7%9C%8B"><span class="toc-number">1.3.1.</span> <span class="toc-text">接口查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8"><span class="toc-number">1.3.2.</span> <span class="toc-text">接口调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Model"><span class="toc-number">1.3.3.</span> <span class="toc-text">Model</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.4.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8A%BF"><span class="toc-number">1.5.</span> <span class="toc-text">优势</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg2.png')"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2021 By wll</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'bpSo4QoWKwBDQIPADEYTAiAd-gzGzoHsz',
+      appKey: 'RBVQf3x0PAt06lcxhBhxOUkN',
+      placeholder: '記得留下你的昵称和邮箱....可以快速收到回復',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '//i0.hdslb.com/bfs/emote/',
+      emojiMaps: {"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可愛":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尷尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_恐吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: 'ba2e7aa3c28bc16a7519',
+      clientSecret: '8680dc943f2f041fb09265e9186d67827a72a856',
+      repo: 'https://github.com/wllshdx/hexo-wllblog-comment-gitalk',
+      owner: 'wllshdx',
+      admin: ['wllshdx'],
+      id: '3a7081d69f51ded70a9231350cb09f37',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Valine' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script>(function(d, w, c) {
+    w.ChatraID = 'CwQnpMJms5hnEcLZT';
+    var s = d.createElement('script');
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+    };
+    s.async = true;
+    s.src = 'https://call.chatra.io/chatra.js';
+    if (d.head) d.head.appendChild(s);
+})(document, window, 'Chatra');
+
+if (true) {
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      Chatra('openChat')
+    });
+  }
+  chatBtnFn()
+} else {
+  if (true) {
+    function chatBtnHide () {
+      Chatra('hide')
+    }
+    function chatBtnShow () {
+      Chatra('show')
+    }
+  }
+}</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
